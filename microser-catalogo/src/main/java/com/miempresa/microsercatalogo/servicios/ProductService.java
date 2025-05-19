@@ -6,6 +6,7 @@ import com.miempresa.microsercatalogo.controladores.dto.ProductRasponse;
 import com.miempresa.microsercatalogo.controladores.dto.ProductRequest;
 import com.miempresa.microsercatalogo.repositorios.ProductRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -57,8 +58,9 @@ public class ProductService {
         }
         return Optional.of(productRasponse);
     }
+    @Transactional
     public void delete(String sku) {
-        productRepo.deleteByName(sku);
+        productRepo.deleteBySku(sku);
     }
 
 

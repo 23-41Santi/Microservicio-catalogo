@@ -47,7 +47,7 @@ public class ProductController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{sku}")
     public ResponseEntity<Void> deleteProduct(@PathVariable String sku) {
         if (productService.findBySku(sku).isPresent()) {
             productService.delete(sku);
@@ -55,6 +55,9 @@ public class ProductController {
         }
         return ResponseEntity.notFound().build();
     }
+
+
+
 }
 
 
