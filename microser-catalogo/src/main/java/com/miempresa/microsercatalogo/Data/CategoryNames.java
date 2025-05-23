@@ -19,8 +19,5 @@ public enum CategoryNames {
         this.description = description;
     }
 
-    // Accesores públicos
-    public String code()        { return code; }
-    public String displayName() { return displayName; }
-    public String description() { return description;}
+
 }
